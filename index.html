@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh</title>
+
+    <!-- Tailwind and DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lexend Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        primary: '#B4F461',
+                    },
+                    fontFamily: {
+                        Lexend: "Lexend",
+                    },
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body class="font-Lexend">
+    <!-- Navbar Starts -->
+    <nav class="bg-[#F9F7F3]">
+        <div class="navbar w-10/12 mx-auto">
+            <div class="navbar-start">
+                <button class="btn bg-primary text-[20px] font-semibold">Blog</button>
+            </div>
+            <div class="navbar-center">
+                <a class="btn btn-ghost text-xl">Donate Bangladesh</a>
+            </div>
+            <div class="navbar-end">
+                <p>
+                    <span>Logo</span>
+                    <span>5500</span>BDT
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar Ends -->
+
+    <!-- Main Section Starts -->
+    <main class="w-10/12 mx-auto">
+        <!-- Buttons -->
+        <div class="flex justify-center items-center mt-14 mb-10 gap-5">
+            <button type="submit" class="btn bg-primary text-[20px] font-semibold">Donation</button>
+            <button type="submit" class="btn text-[20px] font-medium  border-1 border-[#111111B3] text-[#111111B3] ">History</button>
+        </div>
+
+        <!-- Cards Section -->
+         <section>
+            <div class="card lg:card-side bg-base-100 shadow-xl border-2 border-[#1111111A] p-5">
+                <figure class="flex-1">
+                  <img
+                    src="assets/noakhali.png"
+                    alt="Album" />
+                </figure>
+                <div class="card-body flex-1 py-0 ">
+                    <div class="w-fit bg-[#1111110D] p-3 rounded-lg">
+                        <span>Icon</span>
+                        <span>0</span>BDT
+                    </div>
+                  <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
+                  <p class="">The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need. </p>
+                  <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                  
+                  <div class="card-actions mt-3">
+                    <button class="btn bg-primary w-full">Donate Now</button>
+                  </div>
+                </div>
+              </div>
+         </section>
+    </main>
+    <!-- Main Section Ends -->
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
