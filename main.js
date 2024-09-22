@@ -41,21 +41,21 @@ document.getElementById("card3-btn").addEventListener("click", function () {
     availableValue -= inputValue;
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card3Title);
-    
-    
+
+
 
 });
 
 
 
-historyBtn.addEventListener("click", function(){
+historyBtn.addEventListener("click", function () {
     historyBtn.classList.add("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.remove("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.add("font-medium", "text-[#111111B3]")
 
-    
+
 });
-donationBtn.addEventListener("click", function(){
+donationBtn.addEventListener("click", function () {
     historyBtn.classList.remove("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.add("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.remove("font-medium", "text-[#111111B3]")
@@ -69,23 +69,27 @@ function addValueToSpan(id, inputValue) {
     donationSpan.innerText = inputValue.toFixed(2);
 }
 
-function getExistingSpanValueInFloat(id){
+function getExistingSpanValueInFloat(id) {
     return parseFloat(document.getElementById(id).innerText);
 }
 function getInputValueInFloat(id) {
     return parseFloat(document.getElementById(id).value);
 }
 
-function getDateTime(){
+function getDateTime() {
     return Date().toString();
 }
 
-function getHistory(inputValue, cardTitle){
-    historySection.innerHTML += `
+//Create History Record for Donate Cards
+function getHistory(inputValue, cardTitle) {
+    let historyDiv = document.createElement("div");
+    historyDiv.innerHTML += `
     <div class="navbar rounded-lg border-2 border-[#111111A] flex-col items-start pl-10 py-5 mb-5">
         <p class="font-bold text-[20px] text-txt11"> ${inputValue.toFixed(2)} Taka is Donated for ${cardTitle}, Bangladesh</p>
         <p class="font-light text-[16px] text-txt11"> Date: ${getDateTime()}</p>
     </div>
     `
+    // historySection.appendChild(historyDiv); // It shows the Last Input as Last Record
+    historySection.insertBefore(historyDiv, historySection.firstChild); //Show the Last Input as First Record 
 }
 
