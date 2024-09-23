@@ -7,6 +7,22 @@ const card2Title = document.getElementById("card2-title").innerText;
 const card1Title = document.getElementById("card1-title").innerText;
 const mainSection = document.getElementById("main");
 
+// Open blog.html in same tab
+function IndexToBlogPage() {
+    window.location.href = 'blog.html'; // Replace 'blog.html' actual page URL
+}
+function BlogToIndexPage() {
+    window.location.href = 'index.html'; 
+}
+
+
+// // For opening blog.html page in a new tab
+// function IndexToBlogPage() {
+//     window.open('blog.html', '_blank'); // Replace 'blog.html' with the actual page URL
+// }
+
+
+
 // Event Handling for Card-1 Donation Button
 document.getElementById("card1-btn").addEventListener("click", function () {
     const inputValue = getInputValueInFloat("card1-input");
@@ -79,6 +95,8 @@ document.getElementById("card3-btn").addEventListener("click", function () {
 
 
 historyBtn.addEventListener("click", function () {
+    // historyBtn.classList.toggle("bg-primary", "font-semibold", "text-txt11") 
+    // donationBtn.classList.toggle("bg-primary", "font-semibold", "text-txt11", "font-medium", "text-[#111111B3]")
     historyBtn.classList.add("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.remove("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.add("font-medium", "text-[#111111B3]")
@@ -87,7 +105,9 @@ historyBtn.addEventListener("click", function () {
 
 });
 donationBtn.addEventListener("click", function () {
-    historyBtn.classList.remove("bg-primary", "font-semibold", "text-txt11")
+    // historyBtn.classList.toggle("bg-primary", "font-semibold", "text-txt11")
+    //donationBtn.classList.toggle("bg-primary", "font-semibold", "text-txt11")
+    historyBtn.classList.remove("bg-primary", "font-semibold", "text-txt11")  
     donationBtn.classList.add("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.remove("font-medium", "text-[#111111B3]")
     historySection.classList.add("hidden")

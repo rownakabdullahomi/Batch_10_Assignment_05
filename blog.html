@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <!-- Tailwind and DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Tailwind CSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        primary: '#B4F461',
+                        secondary: '#F9F7F3',
+                        txt11: '#111111',
+                    },
+                    fontFamily: {
+                        Lexend: "Lexend",
+                    },
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <header class="sticky top-0 z-10 bg-white/75"></header>
+    <!-- Navbar Starts -->
+    <nav class="bg-secondary/75 py-2">
+        <div class="navbar lg:w-10/12 w-11/12 mx-auto">
+            <div class="navbar-start">
+                <button onclick="BlogToIndexPage()"
+                    class="btn bg-primary text-[20px] font-semibold text-txt11">Home</button>
+            </div>
+            <div class="navbar-center gap-3">
+                <img src="assets/logo.png" alt="">
+                <a class="font-semibold text-xl hidden lg:block cursor-pointer">Donate Bangladesh</a>
+            </div>
+            <div class="navbar-end gap-1">
+
+                <img src="assets/coin.png" alt="">
+                <span id="available-value">5500.00</span>BDT
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar Ends -->
+
+    </header>
+
+    <section class="lg:mt-20 mt-10 lg:w-8/12 w-11/12 mx-auto ">
+
+        <div tabindex="0" class="mb-3 collapse collapse-arrow border-base-300 bg-base-200 border">
+            <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+            <div class="collapse-content">
+                <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page
+                    so
+                    that programs can change the document structure, style, and content. The DOM represents the document
+                    as
+                    nodes and objects; that way, programming languages can interact with the page.</p>
+            </div>
+        </div>
+
+        <div tabindex="0" class="mb-3 collapse collapse-arrow border-base-300 bg-base-200 border">
+            <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+            <div class="collapse-content">
+                <p>To select an element from the DOM (Document Object Model) in JavaScript, we can use various methods
+                    depending on the type of selection you need (e.g., by id, class, tag, or any other CSS selector).
+                    Below
+                    are the most common methods: <br> <br>
+                <ul class="font-semibold list-disc pl-10">
+                    <li>getElementById(): Selects a single element by id.</li>
+                    <li>getElementsByClassName(): Selects all elements with a specific class.</li>
+                    <li>getElementsByTagName(): Selects all elements with a specific tag.</li>
+                    <li>querySelector(): Selects the first element that matches a CSS selector.</li>
+                    <li>querySelectorAll(): Selects all elements that match a CSS selector.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        <div tabindex="0" class="mb-3 collapse collapse-arrow border-base-300 bg-base-200 border">
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+            <div class="collapse-content">
+                <p>Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.</p>
+            </div>
+        </div>
+
+
+        <div tabindex="0" class="mb-3 collapse collapse-arrow border-base-300 bg-base-200 border">
+            <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+            <div class="collapse-content">
+                <p>To manipulate an element’s attributes and styles using the DOM, you can use JavaScript to access and modify various properties of the element. This includes modifying attributes like id, class, or src, as well as directly changing CSS styles.
+                    <ul class="font-semibold list-disc pl-10">
+                        <span class="text-blue-600">Attributes:</span>
+                        <li>setAttribute()</li>
+                        <li>getAttribute()</li>
+                        <li>removeAttribute()</li>
+                    </ul> <br>
+                    <ul class="font-semibold list-disc pl-10">
+                        <span class="text-blue-600">Classes:</span>
+                        <li>classList.add()</li>
+                        <li>classList.remove()</li>
+                        <li>classList.toggle()</li>
+                        <li>classList.contains()</li>
+                    </ul> <br>
+                    <ul class="font-semibold list-disc pl-10">
+                        <span class="text-blue-600">Styles:</span>
+                        <li>element.style.propertyName to set styles directly</li>
+                        <li>getComputedStyle() to retrieve the computed styles applied to an element</li>
+                    </ul> <br>
+                    <ul class="font-semibold list-disc pl-10">
+                        <span class="text-blue-600">Content</span>:
+                        <li>innerHTML for HTML content</li>
+                        <li>innerText or textContent for plain text</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
