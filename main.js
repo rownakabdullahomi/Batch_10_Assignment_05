@@ -23,6 +23,7 @@ function BlogToIndexPage() {
 
 // Event Handling for Card-1 Donation Button
 document.getElementById("card1-btn").addEventListener("click", function () {
+    const inputValueText = document.getElementById("card1-input").innerText;
     const inputValue = getInputValueInFloat("card1-input");
 
     //Input and Amount Validation for Card-1
