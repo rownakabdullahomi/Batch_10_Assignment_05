@@ -10,7 +10,7 @@ const mainSection = document.getElementById("main");
 // Event Handling for Card-1 Donation Button
 document.getElementById("card1-btn").addEventListener("click", function () {
     const inputValue = getInputValueInFloat("card1-input");
-    
+
     //Input and Amount Validation for Card-1
     if (inputValidation(inputValue) === false) {
         clearField("card1-input")
@@ -31,12 +31,20 @@ document.getElementById("card1-btn").addEventListener("click", function () {
 // Event Handling for Card-2 Donation Button
 document.getElementById("card2-btn").addEventListener("click", function () {
     inputValue = getInputValueInFloat("card2-input");
+        
+    //Input and Amount Validation for Card-2
+    if (inputValidation(inputValue) === false) {
+        clearField("card2-input")
+        return;
+    }
+
     const existingValue = getExistingSpanValueInFloat("card2-donation");
     const totalDonation = inputValue + existingValue;
     addValueToSpan("card2-donation", totalDonation);
     availableValue -= inputValue;
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card2Title);
+    clearField("card2-input");
 });
 
 
