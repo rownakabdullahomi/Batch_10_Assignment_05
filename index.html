@@ -174,28 +174,17 @@
         </section>
         <!-- Card - 3 Ends -->
 
-        <!-- Success Alert Starts -->
-        <div id="success-alert" class="toast toast-bottom toast-end hidden">
-            <div class="alert alert-success flex">
-                <span>You Donated Successfully.</span>
-                <span id="alert-close-btn"
-                    class="closebtn font-semibold text-[22px] mr-2 ml-3 text-black hover:text-white float-right cursor-pointer duration-300">&times;</span>
-            </div>
-        </div>
-        <!-- Success Alert Ends -->
-
-
         <!-- Modal Starts -->
         <section>
-            <dialog id="my_modal_3" class="modal ">
+            <dialog id="modal" class="modal ">
                 <div class="modal-box overflow-hidden w-fit flex flex-col items-center justify-center gap-5 lg:px-16 px-5">
-                    <h3 class=" font-extrabold text-[35px]">Congrates!</h3>
+                    <h3 class=" font-extrabold text-[35px] text-gray-600">Congrates!</h3>
                     <div class="h-[35px] w-[35px]">
                         <img class="h-full w-full" src="assets/coin.png" alt="">
                     </div>
                     
                     <p class="font-semibold text-[20px]">You Have Donated for Humankind</p>
-                    <h4 class="font-bold text-[25px] text-green-700">Successfully</h4>
+                    <h4 class="font-bold text-[30px] text-green-600">Successfully</h4>
                     <form method="dialog">
                         <button class="btn btn-sm bg-gray-300">close
                             confirmation</button>
@@ -205,9 +194,15 @@
         </section>
         <!-- Modal Ends -->
 
-
-
-
+        <!-- Success Alert Starts (Customized Success Alert with Close Button (Important For Future)) -->
+        <!-- <div id="success-alert" class="toast toast-bottom toast-end hidden">
+            <div class="alert alert-success flex">
+                <span>You Donated Successfully.</span>
+                <span id="alert-close-btn"
+                    class="closebtn font-semibold text-[22px] mr-2 ml-3 text-black hover:text-white float-right cursor-pointer duration-300">&times;</span>
+            </div>
+        </div> -->
+        <!-- Success Alert Ends -->
 
     </main>
     <!-- Main Section Ends -->

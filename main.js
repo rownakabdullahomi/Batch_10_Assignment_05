@@ -15,13 +15,10 @@ function BlogToIndexPage() {
     window.location.href = 'index.html'; 
 }
 
-
 // // For opening blog.html page in a new tab
 // function IndexToBlogPage() {
 //     window.open('blog.html', '_blank'); // Replace 'blog.html' with the actual page URL
 // }
-
-
 
 // Event Handling for Card-1 Donation Button
 document.getElementById("card1-btn").addEventListener("click", function () {
@@ -41,8 +38,7 @@ document.getElementById("card1-btn").addEventListener("click", function () {
     getHistory(inputValue, card1Title);
     clearField("card1-input");
     // successAlert();
-    document.getElementById("my_modal_3").showModal()
-
+    document.getElementById("modal").showModal()  //open the modal using ID.showModal() method (from daisy UI)
 });
 
 
@@ -67,6 +63,7 @@ document.getElementById("card2-btn").addEventListener("click", function () {
     getHistory(inputValue, card2Title);
     clearField("card2-input");
     // successAlert();
+    document.getElementById("modal").showModal()  //open the modal using ID.showModal() method (from daisy UI)
 });
 
 
@@ -88,11 +85,9 @@ document.getElementById("card3-btn").addEventListener("click", function () {
     getHistory(inputValue, card3Title);
     clearField("card3-input");
     // successAlert();
-
+    document.getElementById("modal").showModal()  //open the modal using ID.showModal() method (from daisy UI)
 
 });
-
-
 
 
 historyBtn.addEventListener("click", function () {
@@ -162,6 +157,8 @@ function clearField(id) {
     document.getElementById(id).value = "";
 }
 
+
+////////////// Customized Success Alert with Close Button (For Future)
 // function successAlert(){
 //     document.getElementById("success-alert").classList.remove("hidden");
 //     document.getElementById("alert-close-btn").addEventListener("click", function(){
