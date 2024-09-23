@@ -24,12 +24,11 @@ document.getElementById("card1-btn").addEventListener("click", function () {
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card1Title);
     clearField("card1-input");
-    document.getElementById("success-alert").classList.remove("hidden");
-    document.getElementById("alert-close-btn").addEventListener("click", function(){
-        document.getElementById("success-alert").classList.add("hidden");
-    })
+    successAlert();
 
 });
+
+
 
 
 
@@ -50,6 +49,7 @@ document.getElementById("card2-btn").addEventListener("click", function () {
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card2Title);
     clearField("card2-input");
+    successAlert();
 });
 
 
@@ -57,13 +57,20 @@ document.getElementById("card2-btn").addEventListener("click", function () {
 // Event Handling for Card-3 Donation Button
 document.getElementById("card3-btn").addEventListener("click", function () {
     inputValue = getInputValueInFloat("card3-input");
+    //Input and Amount Validation for Card-3
+    if (inputValidation(inputValue) === false) {
+        clearField("card3-input")
+        return;
+    }
+
     const existingValue = getExistingSpanValueInFloat("card3-donation");
     const totalDonation = inputValue + existingValue;
     addValueToSpan("card3-donation", totalDonation);
     availableValue -= inputValue;
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card3Title);
-
+    clearField("card3-input");
+    successAlert();
 
 
 });
@@ -132,5 +139,12 @@ function inputValidation(inputValue) {
 
 function clearField(id) {
     document.getElementById(id).value = "";
+}
+
+function successAlert(){
+    document.getElementById("success-alert").classList.remove("hidden");
+    document.getElementById("alert-close-btn").addEventListener("click", function(){
+    document.getElementById("success-alert").classList.add("hidden");
+    })
 }
 
