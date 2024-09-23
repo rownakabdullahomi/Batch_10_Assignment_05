@@ -47,7 +47,8 @@
         <nav class="bg-secondary/75 py-2">
             <div class="navbar lg:w-10/12 w-11/12 mx-auto">
                 <div class="navbar-start">
-                    <button onclick="IndexToBlogPage()" class="btn bg-primary text-[20px] font-semibold text-txt11">Blog</button>
+                    <button onclick="IndexToBlogPage()"
+                        class="btn bg-primary text-[20px] font-semibold text-txt11">Blog</button>
                 </div>
                 <div class="navbar-center gap-3">
                     <img src="assets/logo.png" alt="">
@@ -65,7 +66,7 @@
         <!-- Buttons -->
         <div class="flex justify-center items-center mt-6 gap-5 pb-5">
             <button type="submit" id="donation-btn"
-                class="btn bg-primary text-[20px] font-semibold text-txt11" >Donation</button>
+                class="btn bg-primary text-[20px] font-semibold text-txt11">Donation</button>
             <button type="submit" id="history-btn"
                 class="btn text-[20px] font-medium text-[#111111B3] ">History</button>
         </div>
@@ -182,6 +183,31 @@
             </div>
         </div>
         <!-- Success Alert Ends -->
+
+
+        <!-- Modal Starts -->
+        <section>
+            <dialog id="my_modal_3" class="modal ">
+                <div class="modal-box overflow-hidden w-fit flex flex-col items-center justify-center gap-5 lg:px-16 px-5">
+                    <h3 class=" font-extrabold text-[35px]">Congrates!</h3>
+                    <div class="h-[35px] w-[35px]">
+                        <img class="h-full w-full" src="assets/coin.png" alt="">
+                    </div>
+                    
+                    <p class="font-semibold text-[20px]">You Have Donated for Humankind</p>
+                    <h4 class="font-bold text-[25px] text-green-700">Successfully</h4>
+                    <form method="dialog">
+                        <button class="btn btn-sm bg-gray-300">close
+                            confirmation</button>
+                    </form>
+                </div>
+            </dialog>
+        </section>
+        <!-- Modal Ends -->
+
+
+
+
 
     </main>
     <!-- Main Section Ends -->

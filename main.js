@@ -40,7 +40,8 @@ document.getElementById("card1-btn").addEventListener("click", function () {
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card1Title);
     clearField("card1-input");
-    successAlert();
+    // successAlert();
+    document.getElementById("my_modal_3").showModal()
 
 });
 
@@ -65,7 +66,7 @@ document.getElementById("card2-btn").addEventListener("click", function () {
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card2Title);
     clearField("card2-input");
-    successAlert();
+    // successAlert();
 });
 
 
@@ -86,7 +87,7 @@ document.getElementById("card3-btn").addEventListener("click", function () {
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card3Title);
     clearField("card3-input");
-    successAlert();
+    // successAlert();
 
 
 });
@@ -161,10 +162,10 @@ function clearField(id) {
     document.getElementById(id).value = "";
 }
 
-function successAlert(){
-    document.getElementById("success-alert").classList.remove("hidden");
-    document.getElementById("alert-close-btn").addEventListener("click", function(){
-    document.getElementById("success-alert").classList.add("hidden");
-    })
-}
+// function successAlert(){
+//     document.getElementById("success-alert").classList.remove("hidden");
+//     document.getElementById("alert-close-btn").addEventListener("click", function(){
+//     document.getElementById("success-alert").classList.add("hidden");
+//     })
+// }
 
