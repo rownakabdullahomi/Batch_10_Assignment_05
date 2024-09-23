@@ -45,16 +45,16 @@
     <header class="sticky top-0 z-10 bg-white/75">
         <!-- Navbar Starts -->
         <nav class="bg-secondary/75 py-2">
-            <div class="navbar lg:w-10/12 w-11/12 mx-auto">
-                <div class="navbar-start">
+            <div class="navbar lg:w-10/12 mx-auto">
+                <div class="navbar-start lg:w-[50%] w-[45%]">
                     <button onclick="IndexToBlogPage()"
-                        class="btn bg-primary text-[20px] font-semibold text-txt11">Blog</button>
+                        class="btn bg-primary lg:text-[20px] font-semibold text-txt11">Blog</button>
                 </div>
                 <div class="navbar-center gap-3">
                     <img src="assets/logo.png" alt="">
                     <a class="font-semibold text-xl hidden lg:block cursor-pointer">Donate Bangladesh</a>
                 </div>
-                <div class="navbar-end gap-1">
+                <div class="navbar-end lg:gap-1">
 
                     <img src="assets/coin.png" alt="">
                     <span id="available-value">5500.00</span>BDT
@@ -177,12 +177,13 @@
         <!-- Modal Starts -->
         <section>
             <dialog id="modal" class="modal ">
-                <div class="modal-box overflow-hidden w-fit flex flex-col items-center justify-center gap-5 lg:px-16 px-5">
+                <div
+                    class="modal-box overflow-hidden w-fit flex flex-col items-center justify-center gap-5 lg:px-16 px-5">
                     <h3 class=" font-extrabold text-[35px] text-gray-600">Congrates!</h3>
                     <div class="h-[35px] w-[35px]">
                         <img class="h-full w-full" src="assets/coin.png" alt="">
                     </div>
-                    
+
                     <p class="font-semibold text-[20px]">You Have Donated for Humankind</p>
                     <h4 class="font-bold text-[30px] text-green-600">Successfully</h4>
                     <form method="dialog">
@@ -209,8 +210,6 @@
 
     <!-- History Section Starts -->
     <section id="history-section" class="lg:w-10/12 w-11/12 mx-auto mt-8 hidden">
-
-
     </section>
     <!-- History Section Ends -->
 
@@ -219,8 +218,6 @@
     <!-- Footer Section Ends -->
 
 
-
     <script src="main.js"></script>
 </body>
-
 </html>
