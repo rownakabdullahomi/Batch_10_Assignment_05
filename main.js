@@ -5,6 +5,7 @@ const historySection = document.getElementById("history-section");
 const card3Title = document.getElementById("card3-title").innerText;
 const card2Title = document.getElementById("card2-title").innerText;
 const card1Title = document.getElementById("card1-title").innerText;
+const mainSection = document.getElementById("main");
 
 // Event Handling for Card-1 Donation Button
 document.getElementById("card1-btn").addEventListener("click", function () {
@@ -48,17 +49,21 @@ document.getElementById("card3-btn").addEventListener("click", function () {
 
 
 
+
 historyBtn.addEventListener("click", function () {
     historyBtn.classList.add("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.remove("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.add("font-medium", "text-[#111111B3]")
-
+    mainSection.classList.add("hidden")
+    historySection.classList.remove("hidden")
 
 });
 donationBtn.addEventListener("click", function () {
     historyBtn.classList.remove("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.add("bg-primary", "font-semibold", "text-txt11")
     donationBtn.classList.remove("font-medium", "text-[#111111B3]")
+    historySection.classList.add("hidden")
+    mainSection.classList.remove("hidden")
 });
 
 
