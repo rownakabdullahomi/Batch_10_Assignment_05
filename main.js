@@ -24,6 +24,11 @@ document.getElementById("card1-btn").addEventListener("click", function () {
     addValueToSpan("available-value", availableValue);
     getHistory(inputValue, card1Title);
     clearField("card1-input");
+    document.getElementById("success-alert").classList.remove("hidden");
+    document.getElementById("alert-close-btn").addEventListener("click", function(){
+        document.getElementById("success-alert").classList.add("hidden");
+    })
+
 });
 
 
