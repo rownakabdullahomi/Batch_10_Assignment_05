@@ -2,9 +2,10 @@ let availableValue = parseFloat(document.getElementById("available-value").inner
 const historyBtn = document.getElementById("history-btn");
 const donationBtn = document.getElementById("donation-btn");
 const historySection = document.getElementById("history-section");
+const card1Title = document.getElementById("card1-title").innerText.replace(", Bangladesh", ""); // Remove ", Bangladesh" from main title
+const card2Title = document.getElementById("card2-title").innerText.replace(", Bangladesh", ""); 
 const card3Title = document.getElementById("card3-title").innerText;
-const card2Title = document.getElementById("card2-title").innerText;
-const card1Title = document.getElementById("card1-title").innerText;
+console.log(card1Title);
 const mainSection = document.getElementById("main");
 
 // Open blog.html in same tab
