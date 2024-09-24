@@ -5,7 +5,6 @@ const historySection = document.getElementById("history-section");
 const card1Title = document.getElementById("card1-title").innerText.replace(", Bangladesh", ""); // Remove ", Bangladesh" from main title
 const card2Title = document.getElementById("card2-title").innerText.replace(", Bangladesh", ""); 
 const card3Title = document.getElementById("card3-title").innerText;
-console.log(card1Title);
 const mainSection = document.getElementById("main");
 
 // Open blog.html in same tab
@@ -23,15 +22,14 @@ function BlogToIndexPage() {
 
 // Event Handling for Card-1 Donation Button
 document.getElementById("card1-btn").addEventListener("click", function () {
-    const inputValueText = document.getElementById("card1-input").innerText;
-    const inputValue = getInputValueInFloat("card1-input");
+    const inputValueString = document.getElementById("card1-input").value; // String Value
+    const inputValue = getInputValueInFloat(inputValueString);
 
-    //Input and Amount Validation for Card-1
-    if (inputValidation(inputValue) === false) {
+    // All Types of Input and Amount Validation for Card-1
+    if (inputValidation(inputValue, inputValueString) === false) {
         clearField("card1-input")
         return;
     }
-
     const existingValue = getExistingSpanValueInFloat("card1-donation");
     const totalDonation = inputValue + existingValue;
     addValueToSpan("card1-donation", totalDonation);
@@ -49,14 +47,14 @@ document.getElementById("card1-btn").addEventListener("click", function () {
 
 // Event Handling for Card-2 Donation Button
 document.getElementById("card2-btn").addEventListener("click", function () {
-    inputValue = getInputValueInFloat("card2-input");
+    const inputValueString = document.getElementById("card2-input").value; // String Value 
+    const inputValue = getInputValueInFloat(inputValueString);
         
-    //Input and Amount Validation for Card-2
-    if (inputValidation(inputValue) === false) {
+    // All Types of All Types of Input and Amount Validation for Card-2
+    if (inputValidation(inputValue, inputValueString) === false) {
         clearField("card2-input")
         return;
     }
-
     const existingValue = getExistingSpanValueInFloat("card2-donation");
     const totalDonation = inputValue + existingValue;
     addValueToSpan("card2-donation", totalDonation);
@@ -72,9 +70,11 @@ document.getElementById("card2-btn").addEventListener("click", function () {
 
 // Event Handling for Card-3 Donation Button
 document.getElementById("card3-btn").addEventListener("click", function () {
-    inputValue = getInputValueInFloat("card3-input");
+    const inputValueString = document.getElementById("card3-input").value; // String Value
+    
+    const inputValue = getInputValueInFloat(inputValueString);
     //Input and Amount Validation for Card-3
-    if (inputValidation(inputValue) === false) {
+    if (inputValidation(inputValue, inputValueString) === false) {
         clearField("card3-input")
         return;
     }
@@ -123,8 +123,8 @@ function addValueToSpan(id, inputValue) {
 function getExistingSpanValueInFloat(id) {
     return parseFloat(document.getElementById(id).innerText);
 }
-function getInputValueInFloat(id) {
-    return parseFloat(document.getElementById(id).value);
+function getInputValueInFloat(inputValueString) {
+    return parseFloat(inputValueString);
 }
 
 function getDateTime() {
@@ -144,7 +144,14 @@ function getHistory(inputValue, cardTitle) {
     historySection.insertBefore(historyDiv, historySection.firstChild); //Show the Last Input as First Record 
 }
 
-function inputValidation(inputValue) {
+function inputValidation(inputValue, inputValueText) {
+    for(let i = 0; i<inputValueText.length; i++){
+        if(isNaN(inputValueText[i])){
+            alert("Please insert a valid positive number ..!!!");
+            return false;
+        }
+    }
+
     if (inputValue <= 0 || isNaN(inputValue)) {
         alert("Please insert a valid positive number ..!!!");
         return false;
