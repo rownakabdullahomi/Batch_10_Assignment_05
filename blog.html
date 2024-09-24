@@ -11,6 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Lexend Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS Configuration -->
     <script>
         tailwind.config = {
@@ -32,34 +37,30 @@
 
 </head>
 
-<body>
-
-    <header class="sticky top-0 z-10 bg-white/75"></header>
-    <!-- Navbar Starts -->
-    <nav class="bg-secondary/75 py-2">
-        <div class="navbar lg:w-10/12 w-11/12 mx-auto">
-            <div class="navbar-start">
-                <button onclick="BlogToIndexPage()"
-                    class="btn bg-primary text-[20px] font-semibold text-txt11">Home</button>
+<body class="font-Lexend">
+    <header class="sticky top-0 z-10 bg-white/75">
+        <!-- Navbar Starts -->
+        <nav class="bg-secondary/75 py-2">
+            <div class="navbar lg:w-10/12 mx-auto">
+                <div class="navbar-start lg:w-[50%] w-[45%]">
+                    <button onclick="BlogToIndexPage()"
+                        class="btn bg-primary text-[20px] font-semibold text-txt11">Home</button>
+                </div>
+                <div class="navbar-center gap-3">
+                    <img src="assets/logo.png" alt="">
+                    <a class="font-semibold text-xl hidden lg:block cursor-pointer">Donate Bangladesh</a>
+                </div>
+                <div class="navbar-end gap-1">
+                    <img src="assets/coin.png" alt="">
+                    <span id="available-value">5500.00</span>BDT
+                </div>
             </div>
-            <div class="navbar-center gap-3">
-                <img src="assets/logo.png" alt="">
-                <a class="font-semibold text-xl hidden lg:block cursor-pointer">Donate Bangladesh</a>
-            </div>
-            <div class="navbar-end gap-1">
-
-                <img src="assets/coin.png" alt="">
-                <span id="available-value">5500.00</span>BDT
-
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar Ends -->
-
+        </nav>
+        <!-- Navbar Ends -->
     </header>
 
     <section class="lg:mt-20 mt-10 lg:w-8/12 w-11/12 mx-auto ">
-
+        <!-- Question 1 -->
         <div tabindex="0" class="mb-3 collapse collapse-arrow border-base-300 bg-base-200 border">
             <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
             <div class="collapse-content">
@@ -70,7 +71,7 @@
                     nodes and objects; that way, programming languages can interact with the page.</p>
             </div>
         </div>
-
+        <!-- Question 2 -->
         <div tabindex="0" class="mb-3 collapse collapse-arrow border-base-300 bg-base-200 border">
             <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
             <div class="collapse-content">
@@ -88,46 +89,50 @@
                 </p>
             </div>
         </div>
-
+        <!-- Question 3 -->
         <div tabindex="0" class="mb-3 collapse collapse-arrow border-base-300 bg-base-200 border">
-            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why
+                is it useful?</div>
             <div class="collapse-content">
-                <p>Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.</p>
+                <p>Event delegation refers to the process of using event propagation (bubbling) to handle events at a
+                    higher level in the DOM than the element on which the event originated. It allows us to attach a
+                    single event listener for elements that exist now or in the future.</p>
             </div>
         </div>
-
-
+        <!-- Question 4 -->
         <div tabindex="0" class="mb-3 collapse collapse-arrow border-base-300 bg-base-200 border">
-            <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+            <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles
+                using the DOM?</div>
             <div class="collapse-content">
-                <p>To manipulate an element’s attributes and styles using the DOM, you can use JavaScript to access and modify various properties of the element. This includes modifying attributes like id, class, or src, as well as directly changing CSS styles. <br>
-                    <ul class="font-semibold list-disc pl-10">
-                        <span class="text-blue-600">Attributes:</span>
-                        <li>setAttribute()</li>
-                        <li>getAttribute()</li>
-                        <li>removeAttribute()</li>
-                    </ul> <br>
-                    <ul class="font-semibold list-disc pl-10">
-                        <span class="text-blue-600">Classes:</span>
-                        <li>classList.add()</li>
-                        <li>classList.remove()</li>
-                        <li>classList.toggle()</li>
-                        <li>classList.contains()</li>
-                    </ul> <br>
-                    <ul class="font-semibold list-disc pl-10">
-                        <span class="text-blue-600">Styles:</span>
-                        <li>element.style.propertyName to set styles directly</li>
-                        <li>getComputedStyle() to retrieve the computed styles applied to an element</li>
-                    </ul> <br>
-                    <ul class="font-semibold list-disc pl-10">
-                        <span class="text-blue-600">Content</span>:
-                        <li>innerHTML for HTML content</li>
-                        <li>innerText or textContent for plain text</li>
-                    </ul>
+                <p>To manipulate an element’s attributes and styles using the DOM, you can use JavaScript to access and
+                    modify various properties of the element. This includes modifying attributes like id, class, or src,
+                    as well as directly changing CSS styles. <br>
+                <ul class="font-semibold list-disc pl-10">
+                    <span class="text-blue-600">Attributes:</span>
+                    <li>setAttribute()</li>
+                    <li>getAttribute()</li>
+                    <li>removeAttribute()</li>
+                </ul> <br>
+                <ul class="font-semibold list-disc pl-10">
+                    <span class="text-blue-600">Classes:</span>
+                    <li>classList.add()</li>
+                    <li>classList.remove()</li>
+                    <li>classList.toggle()</li>
+                    <li>classList.contains()</li>
+                </ul> <br>
+                <ul class="font-semibold list-disc pl-10">
+                    <span class="text-blue-600">Styles:</span>
+                    <li>element.style.propertyName to set styles directly</li>
+                    <li>getComputedStyle() to retrieve the computed styles applied to an element</li>
+                </ul> <br>
+                <ul class="font-semibold list-disc pl-10">
+                    <span class="text-blue-600">Content</span>:
+                    <li>innerHTML for HTML content</li>
+                    <li>innerText or textContent for plain text</li>
+                </ul>
                 </p>
             </div>
         </div>
-
     </section>
 
 
