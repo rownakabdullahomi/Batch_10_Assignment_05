@@ -27,7 +27,7 @@ document.getElementById("card1-btn").addEventListener("click", function () {
 
     // All Types of Input and Amount Validation for Card-1
     if (inputValidation(inputValue, inputValueString) === false) {
-        clearField("card1-input")
+        clearField("card1-input");
         return;
     }
     const existingValue = getExistingSpanValueInFloat("card1-donation");
@@ -38,12 +38,8 @@ document.getElementById("card1-btn").addEventListener("click", function () {
     getHistory(inputValue, card1Title);
     clearField("card1-input");
     // successAlert();
-    document.getElementById("modal").showModal()  //open the modal using ID.showModal() method (from daisy UI)
+    document.getElementById("modal").showModal();  //open the modal using ID.showModal() method (from daisy UI)
 });
-
-
-
-
 
 // Event Handling for Card-2 Donation Button
 document.getElementById("card2-btn").addEventListener("click", function () {
@@ -52,7 +48,7 @@ document.getElementById("card2-btn").addEventListener("click", function () {
         
     // All Types of All Types of Input and Amount Validation for Card-2
     if (inputValidation(inputValue, inputValueString) === false) {
-        clearField("card2-input")
+        clearField("card2-input");
         return;
     }
     const existingValue = getExistingSpanValueInFloat("card2-donation");
@@ -63,22 +59,19 @@ document.getElementById("card2-btn").addEventListener("click", function () {
     getHistory(inputValue, card2Title);
     clearField("card2-input");
     // successAlert();
-    document.getElementById("modal").showModal()  //open the modal using ID.showModal() method (from daisy UI)
+    document.getElementById("modal").showModal();  //open the modal using ID.showModal() method (from daisy UI)
 });
-
-
 
 // Event Handling for Card-3 Donation Button
 document.getElementById("card3-btn").addEventListener("click", function () {
-    const inputValueString = document.getElementById("card3-input").value; // String Value
-    
+    const inputValueString = document.getElementById("card3-input").value; // String Value  
     const inputValue = getInputValueInFloat(inputValueString);
-    //Input and Amount Validation for Card-3
+
+    // All Types of All Types of Input and Amount Validation for Card-3
     if (inputValidation(inputValue, inputValueString) === false) {
-        clearField("card3-input")
+        clearField("card3-input");
         return;
     }
-
     const existingValue = getExistingSpanValueInFloat("card3-donation");
     const totalDonation = inputValue + existingValue;
     addValueToSpan("card3-donation", totalDonation);
@@ -91,7 +84,7 @@ document.getElementById("card3-btn").addEventListener("click", function () {
 
 });
 
-
+// Event Handling for History Button
 historyBtn.addEventListener("click", function () {
     // historyBtn.classList.toggle("bg-primary", "font-semibold", "text-txt11") 
     // donationBtn.classList.toggle("bg-primary", "font-semibold", "text-txt11", "font-medium", "text-[#111111B3]")
@@ -102,6 +95,8 @@ historyBtn.addEventListener("click", function () {
     historySection.classList.remove("hidden")
 
 });
+
+// Event Handling for Donation Button
 donationBtn.addEventListener("click", function () {
     // historyBtn.classList.toggle("bg-primary", "font-semibold", "text-txt11")
     //donationBtn.classList.toggle("bg-primary", "font-semibold", "text-txt11")
@@ -112,26 +107,28 @@ donationBtn.addEventListener("click", function () {
     mainSection.classList.remove("hidden")
 });
 
-
-
-
+// Reusable Function to Update Donation in Each Card
 function addValueToSpan(id, inputValue) {
     const donationSpan = document.getElementById(id);
     donationSpan.innerText = inputValue.toFixed(2);
 }
 
+// Reusable Function to Get the Existing Donation Value from Each Card
 function getExistingSpanValueInFloat(id) {
     return parseFloat(document.getElementById(id).innerText);
 }
+
+// Reusable Function to Make the Input value from String to Float
 function getInputValueInFloat(inputValueString) {
     return parseFloat(inputValueString);
 }
 
+// Reusable Function to Get the Date and time in String Format
 function getDateTime() {
     return Date().toString();
 }
 
-//Create History Record for Donate Cards
+// Function to Create History Record for Every Donate Cards
 function getHistory(inputValue, cardTitle) {
     let historyDiv = document.createElement("div");
     historyDiv.innerHTML += `
@@ -144,24 +141,35 @@ function getHistory(inputValue, cardTitle) {
     historySection.insertBefore(historyDiv, historySection.firstChild); //Show the Last Input as First Record 
 }
 
+// Reusable Function for All Types of Input Validation
 function inputValidation(inputValue, inputValueText) {
+    // Validate Each Character is Number or Not (100abc, 100.2z, 500xy500 This Type of  Input Value)
     for(let i = 0; i<inputValueText.length; i++){
-        if(isNaN(inputValueText[i])){
-            alert("Please insert a valid positive number ..!!!");
-            return false;
+        if(inputValueText[i] === "."){     // Ignore point for Float Value
+            continue;
         }
+        else{
+            if(isNaN(inputValueText[i])){
+                alert("Please insert a valid positive number ..!!!");
+                return false;
+            }
+        }      
     }
 
+    // Validate Negative, text / String, Empty field
     if (inputValue <= 0 || isNaN(inputValue)) {
         alert("Please insert a valid positive number ..!!!");
         return false;
     }
+
+    // Validate Donation Value Can Not be Greater Than Available Balance
     else if(inputValue > availableValue){
         alert("Available balance is low for this donation");
         return false;
     }
 }
 
+// Function to Clear the Input Field After Every Iteration
 function clearField(id) {
     document.getElementById(id).value = "";
 }
