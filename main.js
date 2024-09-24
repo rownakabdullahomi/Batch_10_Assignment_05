@@ -135,7 +135,7 @@ function getDateTime() {
 function getHistory(inputValue, cardTitle) {
     let historyDiv = document.createElement("div");
     historyDiv.innerHTML += `
-    <div class="navbar rounded-lg border-2 border-[#111111A] flex-col items-start pl-10 py-5 mb-5">
+    <div class="navbar rounded-lg border-2 border-[#111111A] flex-col items-start md:pl-10 px-4 py-5 mb-5">
         <p class="font-bold text-[20px] text-txt11"> ${inputValue.toFixed(2)} Taka is Donated for ${cardTitle}, Bangladesh</p>
         <p class="font-light text-[16px] text-txt11"> Date: ${getDateTime()}</p>
     </div>
